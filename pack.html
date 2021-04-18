@@ -1,0 +1,20 @@
+{# SPDX-License-Identifier: AGPL-3.0-only #}
+{# Copyright (C) 2021 Sean Anderson <seanga2@gmail.com> #}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pack {{ i }}</title>
+</head>
+<body>
+	<h1>Pack {{ i }}</h1>
+	<table>
+	{%- for pack in packs %}
+		<tr>
+		{%- for card in pack %}
+			<td><img src="{{ card_map[card] }}" title="{{ card }}"></td>
+		{%- endfor %}
+		</tr>
+	{%- endfor %}
+	</table>
+</body>
+</html>

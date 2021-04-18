@@ -1,0 +1,37 @@
+= Automatic Rectangle Draft Dealer
+
+This is an automated dealer to help setting up
+https://www.youtube.com/watch?v=xTER_AcSSnE[rectangle drafts].
+To start, install the dependencies
+
+    pip install -r requirements.txt
+
+Then, run `deal.py`
+
+    python deal.py https://cubecobra.com/cube/list/2k
+
+This example uses my cube, but you can substitute anything you want. The files
+`[0-7].html` will be created with packs which can be sent to your players. To
+"pick" a card, just delete its line.
+
+This will not work for non-360 cubes. Please submit a patch :)
+
+== Fun facts
+
+The default shuffle is based on the video. There is an alternate shuffle called
+"weighted" which is based off
+https://old.reddit.com/r/mtgcube/comments/34fet8/novel_method_for_shuffling_a_cube/?context=3[this
+reddit post]. I don't know if it's better.
+
+`requests_html` is kinda crazy and handles fetching and extracting the cube
+data in 2 lines which is amazing. But we only have to do this in the first
+place because cube cobra still doesn't have an api...
+
+There are a lot of list comprehensions because that's how I think. Don't @ me.
+
+There is no error handling except for options; we just crash if anything goes
+wrong.
+
+I use `getopt` because `argparse` is terrible.
+
+I have no idea how to format nested list comprehensions.
